@@ -14,6 +14,11 @@
 
 .content-section.join-leo {
 
+  p:last-child a {
+    width: 190px;
+    text-align: center;
+  }
+
   p:last-child a:first-child {
     @extend .button.no-arrow;
     margin-right: 20px;
