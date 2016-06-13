@@ -1,0 +1,53 @@
+{% capture content %}
+<main role="main">
+  {% include 'includes/header' %}
+  <article class="primary-content">
+    <section class="content-section column-1">
+      <div class="container-inner">
+        <div class="vertical-center">
+           <div class="vertical-center-inner">
+              <div class="content-column">
+                <div class="content-column-inner">
+                {{ current.body }}
+                </div>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-legal">
+      <div class="container-inner">
+        <div class="vertical-center">
+           <div class="vertical-center-inner">
+              <div class="content-column">
+                <div class="content-column-inner">
+                  <ul class="fixed-nav legal-nav">
+                    <li class="indicator"></li>
+                  {% for post in site.pages.legal.posts %}
+                    <li {% if forloop.first %}class="active"{% endif %}><a href="#{{post.url | split:'/' | last}}">{{ post.title }}</a></li>
+                  {% endfor %}
+                  </ul>
+                </div>
+              </div>
+              <div class="content-column">
+                <div class="content-column-inner">
+                  {% for post in site.pages.legal.posts %}
+                  <article id="{{post.url | split:'/' | last}}" class="post-legal">
+                    <h2>{{ post.title }}</h2>
+                    <div class="post-body">
+                    {{ post.body }}
+                    </div>
+                  </article>
+                  {% endfor %}
+                </div>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+  </article>
+  {% include 'includes/footer' %}
+</main>
+{% endcapture %}
+{% include 'layouts/default' %}

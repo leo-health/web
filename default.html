@@ -1,0 +1,93 @@
+{% capture content %}
+<main role="main">
+  {% include 'includes/header' %}
+  <article class="primary-content">
+    {% for post in posts %}
+
+      {% assign bg_asset = false %}
+      {% for asset in post.assets %}
+        {% if asset.meta.name == 'bg' %}
+          {% assign bg_asset = asset %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign bg_col_add = 0 %}
+      {% assign bg_right_asset = false %}
+      {% for asset in post.assets %}
+        {% if asset.meta.name == 'right_half_bg' %}
+          {% assign bg_right_asset = asset %}
+          {% assign bg_col_add = 1 %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign bg_left_asset = false %}
+      {% for asset in post.assets %}
+        {% if asset.meta.name == 'left_half_bg' %}
+          {% assign bg_left_asset = asset %}
+          {% assign bg_col_add = 1 %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign pbody = post.body | split: "<hr>" %}
+      {% assign pclass = post.url | split: "/" %}
+      <section class="content-section {{pclass.last}} column-{{pbody | size | plus:  bg_col_add}}" id="section-{{forloop.index}}">
+
+      {% if bg_asset %}
+        <div class="full-background" style="background-image: url('{{bg_asset.url}}');"></div>
+      {% endif %}
+
+        <div class="container-inner">
+          <div class="vertical-center">
+             <div class="vertical-center-inner">
+                {% if post.meta.over_header %}
+                  <h2 class="over-header">{{post.meta.over_header}}</h2>
+                {% endif %}
+
+                {% if bg_left_asset %}
+                  <div class="content-column">
+                    <div class="content-column-inner half-background-contain">
+                      <div class="half-background" style="background-image: url('{{bg_left_asset.url}}');"></div>
+                    </div>
+                  </div>
+                {% endif %}
+
+                {% for bpart in pbody %}
+                  <div class="content-column">
+                    <div class="content-column-inner">
+                      {{bpart}}
+                    </div>
+                  </div>
+                {% endfor %}
+
+                {% if bg_right_asset %}
+                  <div class="content-column">
+                    <div class="content-column-inner half-background-contain">
+                      <div class="half-background right" style="background-image: url('{{bg_right_asset.url}}');"></div>
+                    </div>
+                  </div>
+                {% endif %}
+
+             </div>
+          </div>
+        </div>
+      </section>
+    {% endfor %}
+
+    {% if current.meta.has_contact_section %}
+      {% include 'includes/contact' %}
+    {% endif %}
+
+    {% if current.meta.has_insurance_section %}
+      {% include 'includes/insurance' %}
+    {% endif %}
+  </article>
+  {% include 'includes/footer' %}
+  {% for page in site.pages %}
+    {% if page.meta.mobile_cta %}
+      <a href="{{page.url}}" class="mobile-cta{% if page.url == url %} is-current-page{% endif %}">{{page.title}}</a>
+      {% break %}
+    {% endif %}
+  {% endfor %}
+</main>
+{% endcapture %}
+{% include 'layouts/default' %}

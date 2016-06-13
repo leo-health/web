@@ -1,0 +1,38 @@
+<footer class="primary-footer">
+  <div class="container-inner">
+    <div class="footer-info">
+      <ul class="footer-nav list-inline">
+        {% for page in site.pages %}
+        {% if page.meta.in_footer_nav %}
+        <li>
+          <a href="{{page.url}}">{{page.title}}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+      <ul class="social-links list-inline">
+        {% for data in site.meta %}
+            {% assign key = data.key | split: '_' %}
+            {% if key[0] == 'social' %}
+                <li>
+                  <a target="_blank" href="{{ data.value }}">
+                    <i class="fa fa-{{key[2]}}"></i>
+                  </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+      </ul>
+      <form id="email-signup-form" method="post" action="//leohealth.us9.list-manage.com/subscribe/post?u=5962dc8f066e37a3a7142b419&amp;id=fd9c78c220" novalidate>
+        <div class="joined-input">
+          <input id="email-input" type="email" placeholder="{{ site.meta['mailchimp_placeholder'] }}">
+          <input data-fbq="Other" type="submit" value="Submit">
+          <label for="email-input"></label>
+        </div>
+      </form>
+    </div>
+    <div class="footer-info">
+      <span class="copyright">©{{ 'now' | date: "%Y" }} {{ site.meta.copyright }}</span>
+      <img class="logo" srcset="/images/leo-health-full-footer-logo.png 1x, /images/leo-health-full-footer-logo@2x.png 2x" alt="{{ site.title }}">
+    </div>
+  </div>
+</footer>

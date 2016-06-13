@@ -1,0 +1,118 @@
+@import '../base';
+
+.home {
+  .primary-content section:first-child {
+    @include box-shadow(inset 0 100px 200px -100px rgba(0,0,0,1));
+
+    .vertical-center-inner {
+      display: block;
+      padding: 200px 0 0 0;
+    }
+  }
+
+  .section-pediatrics {
+
+    .full-background {
+      background-position: center right;
+      background-size: 75% auto;
+    }
+
+    p a {
+      @extend .button;
+    }
+
+    p {
+      width: 380px;
+    }
+
+    h2 {
+      @include transition(color $transition-length);
+    }
+
+    .content-column-inner:hover {
+      h2 {
+        color: $blue;
+      }
+
+      a {
+        color: $blue;
+        border-color: $blue;
+
+        &:after {
+         left: 5px;
+        }
+      }
+    }
+  }
+
+  .primary-content .section-overview .content-column-inner > p:first-child img {
+    left: auto;
+    right: 0;
+  }
+
+  .primary-content section:first-child {
+
+    .full-background {
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.2) 50%, rgba(255,255,255,1) 80%,rgba(255,255,255,1) 100%));
+      }
+    }
+
+    h2:after {
+      display: none;
+    }
+
+    .content-column:last-child .content-column-inner > *:last-child {
+      @extend .with-accent-line.left;
+    }
+  }
+
+  .primary-content section:first-child a {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 108px;
+    height: 108px;
+    background-color: rgba(0, 0, 0, 0.2);
+    @include transition(background-color $transition-length);
+    border-radius: 100%;
+    position: relative;
+    border: none;
+    margin-top: 40px;
+
+    &:after {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-left: 35px solid rgba(255, 255, 255, 0.8);
+      @include transition(border-left-color $transition-length);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left:0;
+      right:0;
+      margin: auto;
+      margin-right: 32px;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+
+      &:after {
+        border-left-color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+}

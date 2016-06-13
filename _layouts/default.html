@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  {% if meta.redirect %}
+    <meta http-equiv="refresh" content="0;url={{meta.redirect}}">
+  {% endif %}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" >
+  <title>{{site.title}} | {{title}}</title>
+  {% include 'includes/meta-description' %}
+  {% include 'includes/meta-open-graph' %}
+  {% include 'includes/meta-twitter' %}
+  <link rel="author" href="humans.txt" />
+  <link rel="icon shortcut" href="/images/favicon.png">
+  <link rel="alternate" type="application/rss+xml" href="{{site.feed_url}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://calendly.com/assets/external/widget.css">
+  <link rel="stylesheet" href="https://fast.fonts.net/cssapi/20f22e0a-6f6a-425f-9749-d3fa2928d97c.css">
+  <link rel="stylesheet" href="/stylesheets/css/min/application.css">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script>window.html5 || document.write('<script src="/scripts/js/min/html5shiv-3.7.3.js"><\/script>')</script>
+  <![endif]-->
+  <script>
+    window.intercomSettings = {
+      app_id: "dtq30jo1"
+    };
+  </script>
+  <!-- INTERCOM -->
+  <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/dtq30jo1';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+  <!-- FACEBOOK PIXEL -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '{{ site.meta["facebook_pixel_id"] }}');
+  fbq('track', "PageView");</script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=255223491501781&ev=PageView&noscript=1"
+  /></noscript>
+</head>
+
+<body class="{% if current.home? %}home {% endif %}{{ current.url | replace:'/',' ' | remove_first:' ' }}">
+  {{ content }}
+  <div class="site-overlay"></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/scripts/js/min/jquery-2.2.0.js"><\/script>'); </script>
+  <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
+  <script src="/scripts/js/min/application.js"></script>
+  <script src="https://calendly.com/assets/external/widget.js" type="text/javascript"></script>
+</body>
+</html>

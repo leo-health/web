@@ -1,0 +1,834 @@
+// 1280
+@media (max-width: 1280px) {
+  .primary-footer .container-inner {
+    padding: 0 $mobile-padding;
+  }
+}
+
+// 1040
+// container width + mobile padding
+@media (max-width: 1040px) {
+  .container-inner {
+    padding: 0 $mobile-padding;
+  }
+}
+
+// 960
+@media (max-width: 960px) {
+
+  .mobile-cta {
+    display: block;
+  }
+
+  // DOWNLOAD
+  .content-section.download .content-column, .content-section.contact .content-column {
+    padding-left: 0;
+  }
+
+  // HEADER
+  .primary-header,
+  .home .primary-header,
+  .primary-header.mini,
+  .home .primary-header.mini {
+    height: 70px;
+
+    .container-outer {
+      border-bottom: none;
+      background-color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .site-title {
+      background-image: url(/images/leo-health-logo.png);
+      width: 138px;
+      height: calc(100% - 30px);
+      position: relative;
+      top: -3px;
+
+      @media
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi) {
+        background-image: url(/images/leo-health-logo@2x.png);
+      }
+    }
+  }
+
+  .primary-header {
+    border-bottom: none;
+
+    .container-inner {
+      position: relative;
+    }
+
+    .site-nav {
+
+      &:before {
+        display: none;
+      }
+
+      .toggle-menu,
+      .toggle-menu-label {
+        display: block;
+      }
+
+      .toggle-menu:checked {
+        & ~ .toggle-menu-label .burger-line {
+          &:first-child {
+            @include transform(rotate(45deg));
+            top: calc(50% - 0.5em - 5px);
+          }
+
+          &:nth-child(2) {
+            width: 0%;
+            opacity: 0;
+          }
+
+          &:nth-child(3) {
+            @include transform(rotate(-45deg));
+          }
+        }
+
+        & ~ ul {
+          max-height: 400%;
+
+          li {
+            opacity: 1;
+          }
+        }
+      }
+
+
+      .toggle-menu:checked ~ .toggle-menu-label {
+        color: white;
+
+        &:before {
+          opacity: 1;
+        }
+      }
+
+      ul {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.9);
+        position: absolute;
+        left: 0;
+        top: 67px;
+        width: 100%;
+        z-index: -1;
+        font-family: $font-family-header;
+        font-size: $font-size-header-smaller-mobile;
+        max-height: 0;
+        overflow: hidden;
+        border-bottom: 1px solid $gray;
+        @include transition(max-height $transition-length);
+
+        li {
+          margin-right: 0;
+          margin-top: 25px;
+          display: block;
+          opacity: 0;
+          @include transition(opacity $transition-length);
+
+          // remove cta from mobile nav
+          &:last-child {
+            display: none;
+          }
+
+          &:nth-last-child(2) {
+            margin-bottom: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  // FOOTER
+  .primary-footer {
+    .footer-nav,
+    .social-links,
+    form,
+    .copyright {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin: 0 auto 20px auto;
+    }
+
+    .joined-input {
+      display: inline-block;
+    }
+
+    .footer-nav,
+    .social-links {
+      margin-bottom: 20px;
+
+      li {
+        margin-right: 0;
+
+        &:nth-child(2) {
+          margin: 0 20px;
+        }
+      }
+    }
+
+    .footer-info {
+
+      &:after {
+        display: none;
+      }
+
+      .logo {
+        display: block;
+        margin: 0 auto;
+      }
+
+      &:first-child {
+        border: none;
+        padding-bottom: 0;
+      }
+
+      &:last-child {
+        padding-top: 0;
+        padding-bottom: 70px;
+      }
+    }
+
+
+  }
+
+  // MAIN
+  strong {
+    letter-spacing: 0;
+  }
+
+  h2 {
+    font-size: $font-size-header - 6px;
+  }
+
+  .primary-content {
+
+    section:first-child .full-background {
+      background-position: center center;
+    }
+
+    section:first-child .vertical-center {
+      padding-top: 120px;
+      height: auto;
+    }
+
+    .vertical-center {
+      padding: 50px 0;
+    }
+
+    .half-background.right {
+      left: 0;
+    }
+
+    section.column-3 .content-column-inner:hover {
+      top: 0;
+
+      h2 {
+        color: inherit;
+      }
+
+      p:first-child {
+        border-color: transparent;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .primary-content .content-column-inner.half-background-contain {
+    position: relative;
+    padding-bottom: 100%;
+
+    .half-background {
+      width: 100%;
+    }
+  }
+
+  // FIXME just added vertical center here to be more specific
+  .primary-content section.column-1 .vertical-center .content-column,
+  .primary-content section.column-2 .vertical-center .content-column,
+  .primary-content section.column-3 .vertical-center .content-column,
+  .primary-content section .vertical-center .content-column {
+    width: 100%;
+    padding-left: 0;
+
+    .content-column-inner {
+      max-width: none;
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+
+  .primary-content section.column-1 .content-column {
+    text-align: left;
+  }
+
+  .primary-content section.column-3{
+
+    .vertical-center .content-column {
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .content-column-inner {
+      min-height: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  // HOME
+  .home {
+    .primary-content section:first-child {
+      @include box-shadow(none);
+      border-bottom: 1px solid #ededed;
+
+      .full-background {
+        background-size: auto 100%;
+      }
+
+      .vertical-center-inner {
+        display: table-cell;
+        padding: 0;
+      }
+
+      a {
+        position: relative;
+        top: 25px;
+        width: 88px;
+        height: 88px;
+        margin-top: 0;
+
+        &:after {
+          border-top: 15px solid transparent;
+          border-bottom: 15px solid transparent;
+          border-left: 25px solid rgba(255,255,255,0.8);
+          margin-right: 27px;
+        }
+      }
+    }
+
+    .section-pediatrics {
+      .full-background {
+        display: none;
+      }
+
+    p {
+        width: auto;
+      }
+    }
+  }
+
+  // HOW IT WORKS
+  .how-it-works {
+    .primary-content section:first-child {
+      position: relative;
+      border-bottom: 1px solid #ededed;
+
+      &:before {
+        display: none;
+      }
+
+      .full-background {
+
+        &:before {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          @include background-image(linear-gradient(bottom, rgba(255,255,255,1) 20%, rgba(255,255,255,0.5) 80%, rgba(255,255,255,0) 100%));
+        }
+      }
+    }
+
+    // MOBILE NAV ELEMENTS
+    @mixin with-mobile-nav() {
+      position: relative;
+
+      &:first-child {
+        a:before {
+          color: $gray;
+        }
+      }
+
+      &:last-child {
+        a:after {
+          color: $gray;
+        }
+      }
+
+      a {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: transparent;
+        padding: 0 10px;
+
+        &:before {
+          display: inline-block;
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          left: 0;
+          content: "\f2ea";
+          font-family: $font-family-icon;
+          border: 1px solid $gray;
+          color: $font-color;
+          @include border-radius(100%);
+        }
+
+        &:after {
+          position: absolute;
+          display: inline-block;
+          right: 0;
+          width: 50px;
+          height: 50px;
+          content: "\f2ee";
+          font-family: $font-family-icon;
+          border: 1px solid $gray;
+          color: $font-color;
+          @include border-radius(100%);
+        }
+      }
+    }
+
+    .section-tech {
+
+      .content-column-inner {
+        > ul {
+          // not shared
+          width: auto;
+
+          img {
+            left: 0 !important;
+          }
+
+          > li {
+            opacity: 0;
+            @include with-mobile-nav();
+            @include transition(opacity $transition-length);
+            width: 100%;
+
+            // ns
+            text-align: center;
+
+            &.active-tab {
+              opacity: 1;
+              z-index: 1;
+            }
+
+            // FIXME :not(:first-child)
+            &:nth-child(2) {
+              position: absolute;
+              top: 0;
+            }
+
+            // FIXME :not(:first-child)
+            &:last-child {
+              position: absolute;
+              top: 0;
+            }
+
+            a {
+              margin-left: 0;
+              margin-bottom: 3em;
+            }
+
+            ul {
+              position: relative;
+              left: 0;
+              top: 0;
+              width: auto;
+
+              li {
+                width: auto;
+                float: none;
+                display: block;
+                text-align: center;
+                margin: 0 auto;
+                padding: 0;
+
+                &:nth-child(1) {
+                  font-family: $font-family-header;
+                  font-size: $font-size-header-smaller;
+                  line-height: 1.2em;
+                  margin-bottom: 16px;
+                  background: none;
+                  height: auto;
+                  width: auto;
+                  padding-bottom: 0;
+                  padding-top: 0;
+                }
+
+                &:nth-child(2) {
+                  font-size: $font-size;
+                  line-height: inherit;
+                  margin-top: auto;
+                  margin-bottom: 2em;
+                  padding-left: 0;
+                  font-family: $font-family;
+                  left: 0;
+                }
+
+                &:last-child {
+                  text-align: center;
+                  max-width: 300px;
+                  width: 100%;
+                  height: 620px;
+                  background-image: url(/assets/how-it-works-phone@2x.png);
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  background-position-x: center;
+                  padding-left: 24px;
+                  padding-right: 21px;
+                  padding-top: 78px;
+                  padding-bottom: 88px;
+                  left: 0;
+
+                  position: relative;
+
+                  &:after {
+                    display: none;
+                  }
+                }
+
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .section-convenience {
+
+      .content-column-inner {
+        > ul {
+          word-break: break-word;
+          height: auto;
+
+          > li {
+            margin-right: 0;
+            display: list-item;
+            opacity: 0;
+            @include with-mobile-nav();
+            @include transition(opacity $transition-length);
+
+            &.active-tab {
+              opacity: 1;
+              z-index: 1;
+            }
+
+            &:nth-child(2) {
+              position: absolute;
+              top: 0;
+            }
+
+            &:last-child {
+              position: absolute;
+              top: 0;
+            }
+
+            &:nth-child(2) a.active-tab + ul img {
+              top: 0;
+            }
+
+            ul li:nth-child(2) {
+              font-size: $font-size;
+            }
+
+            ul {
+              position: static;
+              opacity: 1;
+
+              li img {
+                float: none !important;
+              }
+
+              li:first-child {
+                font-size: $font-size-header-smaller;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    .section-community {
+      p {
+        padding: 0;
+      }
+    }
+  }
+
+  // PARTNERS
+  .practice {
+
+    section:first-child .vertical-center {
+      padding-top: 120px;
+      padding-bottom: 30px;
+    }
+
+    .section-partner {
+      .content-column:first-child {
+        width: 100%;
+      }
+
+      .content-column-inner {
+        padding-bottom: 0;
+      }
+
+      p {
+        max-width: none;
+      }
+
+      ul {
+        position: static;
+        height: auto;
+        white-space: normal;
+
+        li {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 20px;
+          width: auto;
+          height: auto;
+          overflow: auto;
+
+          img {
+            position: static;
+            max-width: 100%;
+            max-height: none;
+            min-height: 0;
+          }
+        }
+      }
+    }
+
+    .section-information {
+      tr td:first-child {
+        padding-right: 0;
+      }
+
+      .vertical-center .content-column:first-child .content-column-inner {
+        position: relative;
+        padding-bottom: 100%;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+        }
+      }
+
+      iframe {
+        width: 100%;
+      }
+
+      .today:before {
+        position: static;
+      }
+    }
+  }
+
+  // ABOUT US
+  .about-us {
+    section:first-child {
+
+      .vertical-center {
+        padding-top: 120px;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .full-background {
+        position: absolute;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+
+    .section-investors li {
+      width: 50%;
+    }
+  }
+
+
+  .about-us section:first-child .vertical-center-inner .content-column:first-child,
+  .about-us section:first-child .vertical-center-inner .content-column:last-child {
+    padding-top: 0;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  // JOIN LEO
+  .join-leo {
+
+    section:first-child .vertical-center {
+      padding-bottom: 0;
+      padding-top: 120px;
+    }
+
+    .section-get {
+      overflow: hidden;
+
+      .vertical-center {
+        padding-top: 0;
+      }
+
+      a:first-child {
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        margin-top: 50px;
+        padding-top: 50px;
+        position: relative;
+
+        &:before {
+          content: "";
+          width: 200%;
+          height: 1px;
+          background: $gray;
+          display: block;
+          position: absolute;
+          top: 0px;
+          left: -50%;
+        }
+      }
+
+      .content-column:first-child {
+        padding-bottom: 50px;
+      }
+
+      .content-column-inner p:first-child {
+        position: static;
+      }
+    }
+
+    .section-location {
+      iframe {
+        width: 100%;
+      }
+
+      .vertical-center .content-column:first-child .content-column-inner {
+        position: relative;
+        padding-bottom: 100%;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+        }
+      }
+    }
+
+  }
+
+  // FIXED NAV
+  .legal,
+  .careers {
+    .fixed-nav {
+      display: none;
+    }
+  }
+
+  // CAREERS
+  .careers {
+    section:first-child .vertical-center {
+      padding-top: 120px;
+    }
+
+    .post-career h2 {
+      font-size: $font-size-header-smaller-mobile;
+
+      &:hover {
+        color: $font-color;
+      }
+    }
+
+    .career-category {
+      margin-bottom: 50px;
+    }
+  }
+
+  // LEGAL
+  .legal {
+    section:first-child .vertical-center {
+      padding-top: 120px;
+    }
+  }
+
+  .insurance-section {
+
+    th {
+      padding: 0 5px;
+    }
+
+    td {
+      width: auto;
+    }
+
+    tr th:first-child,
+    tr td:first-child {
+      padding: 0;
+    }
+  }
+
+}
+
+// 480
+@media (max-width: 480px) {
+
+  .home {
+    .primary-content section:first-child {
+
+      .full-background {
+        background-position: top;
+        background-size: 225%;
+        background-position-x: 25%;
+
+        &:after {
+          display: none;
+        }
+
+        &:before {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          @include background-image(linear-gradient(bottom, #ffffff 0%,#ffffff 38%,rgba(255,255,255,0) 100%));
+        }
+      }
+    }
+  }
+
+  .container-inner {
+    padding: 0 $mobile-padding-small;
+  }
+
+  .about-us .section-investors li {
+    font-size: $font-size-larger;
+  }
+}

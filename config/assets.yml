@@ -1,0 +1,7 @@
+gzip_assets: off
+javascript_compressor: uglifier
+
+javascripts:
+  application:
+    - scripts/js/vendor/*.js
+    - scripts/js/*.js

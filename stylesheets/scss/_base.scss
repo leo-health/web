@@ -1,0 +1,117 @@
+@import "compass";
+
+$twitter: #00aced;
+$facebook: #3b5998;
+$linkedin: #007bb6;
+$youtube: #bb0000;
+$vimeo: #aad450;
+$tumblr: #32506d;
+$instagram: #517fa4;
+$flickr: #ff0084;
+$dribbble: #ea4c89;
+$quora: #a82400;
+$foursquare: #0072b1;
+$forrst: #5B9A68;
+$vk: #45668e;
+$wordpress: #21759b;
+$stumbleupon: #EB4823;
+$yahoo: #7B0099;
+$blogger: #fb8f3d;
+$soundcloud: #ff3a00;
+$github: #000000;
+
+$orange: #ec5b44;
+$blue: #4cb8e5;
+$green: #6ad99b;
+$light-gray: #fcfcfc;
+$gray: #ededed;
+$middle-gray: #CCCCCC;
+$charcoal: #231F20;
+$brown: #908680;
+
+$transition-length: 500ms;
+
+$grid-large: 60px;
+$grid-small: 20px;
+
+$font-size-smaller: 14px;
+$font-size: 16px;
+$font-size-larger: 20px;
+$font-size-middle: 30px;
+
+$font-size-header-smaller-mobile: 35px;
+$font-size-header-smaller: 50px;
+$font-size-header: 60px;
+
+$font-color: #575757;
+
+$font-family: "Univers LT W01_45 Light1475944", "Helvetica Neue", sans-serif;
+$font-family-header: "Futura PT W01 Light", "Helvetica Neue", sans-serif;
+$font-family-icon: 'Material-Design-Iconic-Font';
+$line-height: 1.7em;
+$letter-spacing: 0.4px;
+
+$mobile-padding: 50px;
+$mobile-padding-small: 20px;
+
+// BLANKET BASE STYLES
+* {
+  @include box-sizing(border-box);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ul {
+  @extend .list-unsyled;
+}
+
+// UTILITIES
+.list-unsyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-inline {
+  @extend .list-unsyled;
+
+  & > li {
+    display: inline-block;
+  }
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+.vertical-center {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.vertical-center-inner {
+  display: table-cell;
+  vertical-align: middle;
+}

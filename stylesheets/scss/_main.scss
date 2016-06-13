@@ -1,0 +1,714 @@
+@import "_base";
+
+::-moz-selection {
+  background: $blue;
+  color: white;
+}
+
+::selection {
+  background: $blue;
+  color: white;
+}
+
+// BUTTON
+.button {
+  display: inline-block;
+  margin-top: 16px;
+  @include border-radius(5px);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0 25px;
+  height: 50px;
+  color: inherit;
+  @include transition(color $transition-length, border-color $transition-length);
+  vertical-align: middle;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  &:after {
+    position: relative;
+    left: 0;
+    font-family: $font-family-icon;
+    content: '\f301';
+    margin-left: 10px;
+    @include transition(left $transition-length);
+  }
+
+  &:hover {
+    color: $blue;
+    border-color: $blue;
+
+    &:after {
+     left: 5px;
+    }
+  }
+}
+
+.button.cta {
+  @extend .button;
+  border: none;
+  color: white;
+  background-color: $blue;
+  @include transition(background-color $transition-length);
+
+  &:hover {
+    color: white;
+    background-color: darken($blue, 10%);
+  }
+}
+
+.button.no-arrow {
+  @extend .button;
+
+  &:after {
+    display: none;
+  }
+}
+
+.button.cta.no-arrow {
+  @extend .button.cta;
+  @extend .button.no-arrow;
+}
+
+.button.cta.no-arrow.orange {
+  @extend .button.cta;
+  @extend .button.no-arrow;
+  background-color: $orange;
+
+  &:hover {
+    background-color: darken($orange, 10%);
+  }
+}
+
+// ACCENT LINE
+.with-accent-line {
+  &:after {
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    width: 100px;
+    border-bottom: 5px solid $blue;
+    @include transition(border-bottom-color $transition-length);
+  }
+}
+
+.with-accent-line.left {
+  @extend .with-accent-line;
+  &:after {
+    margin: 0;
+  }
+}
+
+.with-accent-line.green.left {
+  @extend .with-accent-line.left;
+  &:after {
+    border-bottom-color: $green;
+  }
+}
+
+.with-accent-line.short {
+  @extend .with-accent-line;
+  &:after {
+    width: 70px;
+  }
+}
+
+.with-accent-line.short.gray {
+  @extend .with-accent-line.short;
+
+  &:after {
+    border-bottom-color: $gray;
+  }
+}
+
+.with-accent-line.short.blue {
+  @extend .with-accent-line.short;
+
+  &:after {
+    border-bottom-color: $blue;
+  }
+}
+
+.with-left-accent {
+  &:before {
+    content: " ";
+    display: inline-block;
+    width: 5px;
+    background-color: $blue;
+    height: 0.8em;
+    position: relative;
+    top: calc(50% - 0.45em);
+    margin-right: 8px;
+  }
+}
+
+.with-left-accent.green {
+  @extend .with-left-accent;
+  &:before {
+    background-color: $green;
+  }
+}
+
+.with-left-accent.outside {
+  @extend .with-left-accent;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    top: calc(50% - 0.45em);
+    left: -15px;
+  }
+}
+
+.with-left-accent.outside.green {
+  @extend .with-left-accent.outside;
+
+  &:before {
+    background-color: $green;
+  }
+}
+
+// COMMON HTML
+html {
+  font-size: $font-size;
+  font-family: $font-family;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  color: $font-color;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: default;
+}
+
+body {
+  background-color: $gray;
+  overflow-x: hidden;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+main {
+  max-width: 1600px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: white;
+}
+
+h2 {
+  font-size: $font-size-header;
+  line-height: 1.1em;
+  font-family: $font-family-header;
+  letter-spacing: -0.02em;
+  margin-top: 16px;
+}
+
+.primary-content h2 a {
+  border-bottom: none;
+  color: $font-color;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: $font-size;
+  @extend .with-left-accent;
+}
+
+h4 {
+  font-size: $font-size-larger;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input {
+  @include border-radius(0);
+  @include appearance(none);
+  @include box-shadow(none);
+  padding: 0;
+  border: none;
+  background: white;
+}
+
+.container-inner {
+  @include clearfix();
+  max-width: 1020px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.primary-content {
+  section {
+    border-bottom: 1px solid $gray;
+    position: relative;
+
+    &:first-child {
+      border-bottom: none;
+
+      h2 {
+        @extend .with-accent-line.left;
+      }
+
+      .vertical-center {
+        height: 700px;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .content-column {
+      float: left;
+      width: 50%;
+      text-align: center;
+    }
+
+    .content-column-inner {
+      max-width: 470px;
+      display: inline-block;
+      text-align: left;
+    }
+
+    &.column-1 {
+
+      .content-column{
+        width: 100%;
+        text-align: left;
+      }
+    }
+
+    // THREE COLUMN SECTION
+    &.column-3 {
+
+      .vertical-center {
+        height: 700px;
+      }
+
+      .content-column {
+        width: 33%;
+      }
+
+      h2:not(.over-header) {
+        max-width: 275px;
+        margin: 0 auto;
+      }
+
+      // We're assuming that this is the thing
+      // that will contain the image
+      .content-column-inner {
+        position: relative;
+        max-width: none;
+        text-align: center;
+        top: 0;
+        @include transition(top ease-in-out $transition-length);
+        @extend .with-accent-line.short.gray;
+        min-height: 600px;
+
+        &:after {
+          position: absolute;
+          bottom: 0;
+          left: calc(50% - 35px); /* 50% - length of accent line/2 */
+        }
+
+        h2 {
+          @include transition(color $transition-length);
+        }
+
+        & > p:first-child {
+          height: 230px;
+          width: 230px;
+          @include border-radius(100%);
+          border: 3px solid transparent;
+          position: relative;
+          overflow: hidden;
+          @include transition(border $transition-length);
+          z-index: 1;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+          }
+
+          .wh {
+            height: 100%;
+            max-width: none;
+          }
+
+          .ww {
+            width: 100%;
+          }
+        }
+      }
+
+      .content-column-inner:hover {
+        top: -10px;
+        @extend .with-accent-line.short.blue;
+
+        > p:first-child {
+          border-color: $blue;
+        }
+
+        h2 {
+          color: $blue;
+        }
+      }
+
+      p {
+        max-width: 275px;
+        margin: 1em auto;
+      }
+    }
+  }
+
+  .vertical-center {
+    height: 600px;
+    padding: 100px 0;
+  }
+
+  a,
+  a[href~=mailto] {
+    color: $blue;
+    @include transition(color $transition-length);
+    border-bottom: 1px solid $blue;
+
+    &:hover {
+      color: darken($blue, 20%);
+    }
+  }
+
+    .half-background {
+      background-repeat: no-repeat;
+      background-position: center center;
+      @include background-size(cover);
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-left: 5px solid $blue;
+
+      &.right {
+        left: 50%;
+        border-left: none;
+        border-right: 5px solid $blue;
+      }
+    }
+
+    .full-background {
+      background-repeat: no-repeat;
+      background-position: center center;
+      @include background-size(cover);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+
+      + .container-inner {
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+
+  .joined-input {
+    white-space: nowrap;
+    font-size: 0;
+    width: 100%;
+    position: relative;
+
+    input {
+      vertical-align: middle;
+      display: inline-block;
+      font-size: $font-size;
+      width: 30%;
+    }
+
+    input:first-child {
+      width: 70%;
+    }
+  }
+
+  .over-header {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+// FIXED / FLOATING NAV
+.fixed-nav {
+  position: relative;
+  top: 0;
+
+  &.fixed {
+    position: fixed;
+  }
+
+  li {
+    padding-left: 15px;
+  }
+
+  a.active:before {
+    background-color: $green;
+  }
+
+  a {
+    border-bottom: none;
+    color: inherit;
+  }
+
+  .indicator {
+    padding-left: 0;
+    position: absolute;
+    content: " ";
+    display: inline-block;
+    width: 7px;
+    background-color: $green;
+    height: 14px;
+    margin-top: 5px;
+    top: 0;
+    left: 0;
+    @include transition(top $transition-length);
+  }
+}
+
+// TEAM LISTS
+.with-image-list {
+  .content-column-inner {
+    max-width: none;
+  }
+
+  h2 {
+    // FIXME perhaps sitewide?
+    margin-left: 25px;
+  }
+
+  .content-column-inner {
+    & > ul {
+      margin-top: 2em;
+      width: 100%;
+      @include clearfix();
+
+      & > li {
+        float: left;
+        position: relative;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        height: 185px;
+        width: 100%;
+        max-width: 144px;
+        overflow: hidden;
+
+        @media (max-width: 480px) {
+          width: calc(50% - 10px);
+          margin-right: 10px;
+          height: auto;
+
+          &:nth-child(2n) {
+            margin-left: 10px;
+            margin-right: 0;
+          }
+        }
+
+        img {
+          display: inherit;
+        }
+
+        &:focus ul,
+        &:hover ul {
+          opacity: 1;
+          z-index: 0;
+          @include transition(opacity $transition-length, z-index $transition-length 0s);
+        }
+
+        & > a {
+          @include border-radius(5px);
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: $green;
+          @include transition(background-color $transition-length);
+          text-align: center;
+          color: white;
+          border-bottom: none;
+          display: inline-block;
+
+          &:hover {
+            background-color: darken($green, 10%);
+          }
+
+          &:before {
+            content: "+";
+            display: block;
+            font-size: 100px;
+            color: rgba(255, 255, 255, 0.25);
+            line-height: 1em;
+          }
+
+          @media (max-width: 480px) {
+            // calc image height - <a> natural height
+            padding-bottom: calc(100% * 185/144 - 154px);
+          }
+        }
+      }
+
+      ul {
+        text-align: center;
+        background: rgba($gray, .9);
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        padding: 0 10px;
+        width: 100%;
+        height: 100%;
+        line-height: normal;
+        z-index: -1;
+        @include transition(opacity $transition-length, z-index $transition-length 500ms);
+
+        li {
+          margin-bottom: 0.5em;
+        }
+
+        li a {
+          display: inline-block;
+          border-bottom: none;
+          border: 3px solid $font-color;
+          height: 40px;
+          width: 40px;
+          @include border-radius(100%);
+          @include transition(background-color $transition-length);
+
+          &:hover {
+            background-color: $font-color;
+
+            &:after {
+              color: white !important;
+            }
+          }
+
+          &:before {
+            display: inline-block;
+            content: "";
+            vertical-align: middle;
+            height: 100%
+          }
+
+          &:after {
+            color: $font-color;
+            height: 100%;
+            vertical-align: middle;
+            font-family: $font-family-icon;
+            content: '\f18e';
+            @include transition(color $transition-length);
+          }
+        }
+
+        li a[href *= "linkedin"] {
+          border-color: $linkedin;
+
+          &:after {
+            color: $linkedin;
+            content: "\f3f8";
+          }
+
+          &:hover {
+            background-color: $linkedin;
+          }
+        }
+
+        li a[href *= "github"] {
+          border-color: $github;
+
+          &:after {
+            color: $github;
+            content: "\f3f6";
+          }
+
+          &:hover {
+            background-color: $github;
+          }
+        }
+
+        li a[href *= "twitter"] {
+          border-color: $twitter;
+
+          &:after {
+            color: $twitter;
+            content: "\f360";
+          }
+
+          &:hover {
+            background-color: $twitter;
+          }
+        }
+
+        li a[href *= "facebook"] {
+          border-color: $facebook;
+
+          &:after {
+            color: $facebook;
+            content: "\f343"
+          }
+
+          &:hover {
+            background-color: $facebook;
+          }
+        }
+
+        & > li:nth-child(2) {
+          font-size: 14px;
+        }
+
+        & > li:last-child {
+          margin-bottom: 0;
+        }
+
+        & > li:nth-child(3) {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.mobile-cta {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: $blue;
+  height: 50px;
+  z-index: 5;
+  display: none;
+  color: white !important;
+
+  &.is-current-page {
+    display: none;
+  }
+
+  &:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+}
+

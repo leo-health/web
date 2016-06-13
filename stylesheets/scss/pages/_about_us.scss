@@ -1,0 +1,71 @@
+.about-us {
+
+  .primary-content section:not(.contact) .vertical-center {
+    height: auto;
+  }
+
+  section:first-child {
+    border-bottom: 1px solid $gray;
+
+    .full-background {
+      background-position: 75% center;
+      @include background-size(600px auto);
+    }
+
+    .vertical-center {
+      padding-top: 200px;
+      height: auto;
+    }
+
+    img {
+      max-width: 550px;
+    }
+
+    h2:after {
+      display: none;
+    }
+  }
+
+  section .content-column-inner {
+    max-width: none;
+  }
+
+  .section-team,
+  .section-advisors {
+    @extend .with-image-list;
+  }
+
+  .section-investors {
+    // FIXME this is weird
+    font-size: $font-size-middle;
+    font-family: $font-family-header;
+
+    h2 {
+      // FIXME perhaps sitewide?
+      margin-left: 25px;
+    }
+
+    ul {
+      margin-top: 2em;
+      @extend .clearfix;
+    }
+
+    li {
+      float: left;
+      text-align: center;
+      width: 33%;
+      height: 214px;
+
+      &:before {
+        content: "";
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+
+    img {
+      vertical-align: middle;
+    }
+  }
+}

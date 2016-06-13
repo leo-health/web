@@ -1,0 +1,13 @@
+{
+  "success": {{ site.meta['mailchimp_conf'].value  | json }},
+  "submit": {{ site.meta['mailchimp_submit'].value  | json }},
+  "error": {
+      "1": {{ site.meta['mailchimp_blank'].value  | json }},
+      "2": {{ site.meta['mailchimp_email_at'].value  | json }},
+      "3": {{ site.meta['mailchimp_email_domain'].value  | json }},
+      "4": {{ site.meta['mailchimp_email_username'].value  | json }},
+      "5": {{ site.meta['mailchimp_email_invalid'].value  | json }},
+      "6": {{ site.meta['mailchimp_too_many_attempts'].value  | json }},
+      "7": {{ site.meta['mailchimp_already_subscribed'].value  | json }}
+  }
+}

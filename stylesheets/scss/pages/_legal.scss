@@ -1,0 +1,50 @@
+.legal {
+
+  section .vertical-center {
+    height: auto;
+  }
+
+  section:first-child .vertical-center {
+    padding-top: 160px;
+    height: auto;
+    padding-bottom: 0;
+
+    .content-column-inner {
+      max-width: none;
+    }
+
+    h2:after {
+      display: none;
+    }
+  }
+
+  .section-legal {
+
+    .content-column {
+      width: 70%;
+      text-align: left;
+
+      .content-column-inner {
+        max-width: none;
+        width: 100%;
+        position: relative;
+
+        article:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      h2:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .section-legal .content-column:first-child {
+    width: 30%;
+  }
+
+  .post-legal {
+    margin-bottom: 100px;
+  }
+}

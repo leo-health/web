@@ -1,0 +1,64 @@
+.lity-content:after {
+  @include box-shadow(none !important);
+}
+
+.lity.lity-iframe {
+  background: rgba(255,255,255,0.9);
+}
+
+.lity-close {
+  width: 30px !important;
+  height: 30px !important;
+  text-shadow: none !important;
+  font-size: 55px !important;
+  color: rgba(255,255,255,0) !important;
+  top: 37px !important;
+  right: 20px !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  -webkit-user-select: none !important;
+
+  &:before {
+    content: "";
+    @include transform(rotate(45deg));
+    top: calc(50% - 0.5em - 1px);
+    width: 100%;
+    height: 2px;
+    background-color: $font-color;
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    @include transition(all $transition-length ease-in-out);
+    @include transform-origin(left, center);
+  }
+
+  &:after {
+    content: "";
+    @include transform(rotate(-45deg));
+    top: calc(50% - 0.5em + 20px);
+    width: 100%;
+    height: 2px;
+    background-color: $font-color;
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    @include transition(all $transition-length ease-in-out);
+    @include transform-origin(left, center);
+  }
+
+  &:hover {
+    text-shadow: none !important;
+    font-size: 55px !important;
+    color: rgba(255,255,255,0) !important;
+  }
+}
+
+.lity-wrap {
+  &:before {
+    margin-right: 0 !important;
+  }
+}
+
+body>.intercom-container {
+  position: static !important;
+}

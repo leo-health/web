@@ -1,0 +1,109 @@
+.careers {
+
+  section .vertical-center {
+    height: auto;
+  }
+
+  .section-careers {
+
+    .content-column {
+      width: 70%;
+      text-align: left;
+
+      .content-column-inner {
+        max-width: none;
+        width: 100%;
+        position: relative;
+
+        .career-category:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .content-column:first-child {
+      width: 30%;
+    }
+  }
+
+  section:first-child .vertical-center {
+    padding-top: 160px;
+    padding-bottom: 0;
+    height: auto;
+
+    .content-column-inner {
+      max-width: none;
+    }
+
+    h2:after {
+      display: none;
+    }
+  }
+
+  .post-career {
+    border-bottom: 1px solid $gray;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-top: 25px;
+
+    h2 {
+      margin-top: 0;
+    }
+
+    &.reveal {
+
+      h2 {
+        &:before {
+          content: "–";
+        }
+      }
+
+      .post-body {
+        // FIXME will this be enough in the future?
+        max-height: 3000px;
+      }
+    }
+
+    // UGH
+    p:last-child a:not(.player) {
+      @extend .button.cta;
+    }
+
+    h2 {
+      font-size: $font-size-header-smaller;
+      cursor: pointer;
+      @include transition(color $transition-length);
+
+      &:before {
+        content: "+";
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 25px;
+        width: 20px;
+        font-size: $font-size-middle;
+      }
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  .post-body {
+    @include transition(max-height ease-in-out $transition-length);
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .career-category {
+    margin-bottom: 100px;
+  }
+
+  .category-delim {
+    padding-left: 28px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

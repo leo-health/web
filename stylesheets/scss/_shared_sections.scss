@@ -1,0 +1,25 @@
+.content-section.join-leo,
+.content-section.contact {
+
+  .content-column {
+    padding-left: 85px;
+  }
+}
+
+.content-section.contact {
+  .half-background {
+    background-position: center top;
+  }
+}
+
+.content-section.join-leo {
+
+  p:last-child a:first-child {
+    @extend .button.no-arrow;
+    margin-right: 20px;
+  }
+
+  p:last-child a:last-child {
+    @extend .button.cta.no-arrow;
+  }
+}

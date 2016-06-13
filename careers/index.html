@@ -1,0 +1,60 @@
+{% capture content %}
+<main role="main">
+  {% include 'includes/header' %}
+  <article class="primary-content">
+    <section class="content-section column-1">
+      <div class="container-inner">
+        <div class="vertical-center">
+           <div class="vertical-center-inner">
+              <div class="content-column">
+                <div class="content-column-inner">
+                {{ current.body }}
+                </div>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-careers">
+      <div class="container-inner">
+        <div class="vertical-center">
+           <div class="vertical-center-inner">
+              <div class="content-column">
+                <div class="content-column-inner">
+                  <ul class="fixed-nav careers-nav">
+                    <li class="indicator"></li>
+                  {% for tag in site.pages.careers.taxonomy['careers'] %}
+                    <li {% if forloop.first %}class="active"{% endif %}><a href="#{{tag.url | split:'/' | last}}">{{ tag.value }}</a></li>
+                  {% endfor %}
+                  </ul>
+                </div>
+              </div>
+              <div class="content-column">
+                <div class="content-column-inner">
+                  {% for tag in site.pages.careers.taxonomy['careers'] %}
+                    <div class="career-category" id="{{tag.url | split:'/' | last}}">
+                      {% for post in tag.posts %}
+                      {% if forloop.first %}
+                        <div class="category-delim">{{ tag.value }}</div>
+                      {% endif %}
+                      <article class="post-career">
+                        <h2>{{ post.title }}</h2>
+                        <div class="post-body">
+                        {{ post.body }}
+                        </div>
+                      </article>
+                      {% endfor %}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+  </article>
+  {% include 'includes/footer' %}
+</main>
+{% endcapture %}
+{% include 'layouts/default' %}

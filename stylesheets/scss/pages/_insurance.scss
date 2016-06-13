@@ -1,0 +1,84 @@
+.insurance-section {
+
+  .vertical-center-inner .content-column {
+    width: 100%;
+  }
+
+  .vertical-center-inner .content-column-inner {
+    max-width: none;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+
+  td,
+  th {
+    border-bottom: 1px solid $middle-gray;
+    border-right: 1px solid $middle-gray;
+  }
+
+  th {
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: bottom;
+    border-right: none;
+
+    &:first-child {
+      padding-left: 30px;
+      text-align: left;
+    }
+  }
+
+  td {
+    vertical-align: middle;
+    width: 20%;
+    height: 100px;
+
+    &:not(:first-child) {
+      color: white;
+      font-size: 0;
+
+      // UH
+      &:not(:empty):before {
+        display: inline-block;
+        content: "\f26b";
+        font-family: $font-family-icon;
+        font-size: 24px;
+        color: $green;
+      }
+    }
+  }
+
+  tr th:last-child,
+  tr td:last-child {
+    border-right: none;
+  }
+
+  tr td {
+    text-align: center;
+    @include user-select(none);
+  }
+
+  tr td:first-child {
+    padding-left: 30px;
+    text-align: left;
+    @include user-select(auto);
+  }
+
+  table + p {
+    position: relative;
+    padding-left: 25px;
+
+    &:before {
+      content: "\f301";
+      font-family: $font-family-icon;
+      position: absolute;
+      left: 0;
+    }
+  }
+}

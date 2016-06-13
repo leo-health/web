@@ -1,0 +1,27 @@
+<header class="primary-header">
+  <div class="container-outer">
+    <div class="container-inner">
+      <h1 class="site-title">
+        <a href="/"></a>
+      </h1>
+      <nav class="site-nav">
+        <input class="toggle-menu" type="checkbox">
+        <a href="javascript:;" class="toggle-menu-label">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </a>
+
+        <ul class="page-menu list-inline">
+          {% for page in site.pages %}
+            {% if page.meta.in_nav %}
+              <li>
+                <a href="{{page.url}}" class="{% if page.url == url || page.home? == current.home? %}is-current-page{% endif %} {% if page.meta.cta %}cta{% endif %}">{{page.title}}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
