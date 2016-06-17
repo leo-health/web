@@ -38,17 +38,15 @@
     }
 
     .site-title {
-      background-image: url(/images/leo-health-logo.png);
-      width: 138px;
-      height: calc(100% - 30px);
-      position: relative;
-      top: -3px;
 
-      @media
-      (-webkit-min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi) {
-        background-image: url(/images/leo-health-logo@2x.png);
+      .logo {
+        opacity: 0;
       }
+
+      .logo-mini {
+        opacity: 1;
+      }
+
     }
   }
 
@@ -303,10 +301,8 @@
 
       a {
         position: relative;
-        top: 25px;
         width: 88px;
         height: 88px;
-        margin-top: 0;
 
         &:after {
           border-top: 15px solid transparent;
@@ -338,6 +334,10 @@
         display: none;
       }
 
+      .content-column-inner {
+        max-width: 470px !important;
+      }
+
       .full-background {
 
         &:before {
@@ -347,7 +347,7 @@
           left: 0;
           width: 100%;
           height: 100%;
-          @include background-image(linear-gradient(bottom, rgba(255,255,255,1) 20%, rgba(255,255,255,0.5) 80%, rgba(255,255,255,0) 100%));
+          @include background-image(linear-gradient(to right, rgba(255,255,255,1) 25%, rgba(255,255,255,0) 100%));
         }
       }
     }
@@ -682,6 +682,10 @@
     section:first-child .vertical-center {
       padding-bottom: 0;
       padding-top: 120px;
+
+      p {
+        line-height: 1.7em;
+      }
     }
 
     .section-get {
@@ -790,6 +794,7 @@
     tr th:first-child,
     tr td:first-child {
       padding: 0;
+      width: 100px;
     }
   }
 
@@ -798,13 +803,44 @@
 // 480
 @media (max-width: 480px) {
 
+  .how-it-works {
+    .primary-content section:first-child {
+      .vertical-center {
+        height: 100%;
+      }
+
+      .full-background {
+        background-position: right center;
+        background-size: auto 100%;
+        height: 50%;
+
+        &:before {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          @include background-image(linear-gradient(bottom, #ffffff 0%,rgba(255,255,255,0) 50%));
+        }
+      }
+    }
+  }
+
   .home {
     .primary-content section:first-child {
 
+      a {
+        margin-top: -40px;
+      }
+
+      .vertical-center {
+        height: 100%;
+      }
+
       .full-background {
-        background-position: top;
-        background-size: 225%;
         background-position-x: 25%;
+        height: 50%;
 
         &:after {
           display: none;
@@ -817,7 +853,7 @@
           left: 0;
           width: 100%;
           height: 100%;
-          @include background-image(linear-gradient(bottom, #ffffff 0%,#ffffff 38%,rgba(255,255,255,0) 100%));
+          @include background-image(linear-gradient(bottom, #ffffff 0%,rgba(255,255,255,0) 50%));
         }
       }
     }
@@ -829,5 +865,15 @@
 
   .about-us .section-investors li {
     font-size: $font-size-larger;
+  }
+}
+
+@media (max-width: 320px) {
+  .home {
+    .primary-content section:first-child {
+      a {
+        margin-top: 20px;
+      }
+    }
   }
 }

@@ -167,6 +167,10 @@
       height: 100%;
     }
 
+    .today-time {
+      color: $blue;
+    }
+
     .today {
       @extend .with-left-accent.outside;
 

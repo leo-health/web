@@ -73,14 +73,17 @@
       font-size: $font-size-header-smaller;
       cursor: pointer;
       @include transition(color $transition-length);
+      position: relative;
+      padding-left: 25px;
 
       &:before {
         content: "+";
         display: inline-block;
-        vertical-align: middle;
-        margin-right: 25px;
         width: 20px;
         font-size: $font-size-middle;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
 
       &:hover {

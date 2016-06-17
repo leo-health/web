@@ -1,5 +1,6 @@
 $(function() {
   var TODAY_CLASS = 'today';
+  var TODAY_TIME_CLASS = 'today-time';
   var $partnerSection = $('.section-partner');
   var $infoSection = $('.section-information');
   var $allRows = $infoSection.find('table tr');
@@ -18,4 +19,5 @@ $(function() {
   var $timeColumn = $allRows.eq(dowColumnRowIndex + 1).find('td:nth-child(' + ($dowColumn.index() + 1) + ')');
 
   $dowColumn.addClass(TODAY_CLASS);
+  $timeColumn.addClass(TODAY_TIME_CLASS);
 });

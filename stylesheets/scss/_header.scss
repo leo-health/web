@@ -42,17 +42,36 @@
   display: inline-block;
   vertical-align: middle;
   height: 100%;
-  background-image: url(/images/leo-health-logo.png);
-  background-position: left center;
-  background-repeat: no-repeat;
-  background-size: contain;
   position: relative;
   width: 138px;
 
-  @media
-  (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi) {
+  .logo {
     background-image: url(/images/leo-health-logo@2x.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    @include transition(opacity $transition-length);
+  }
+
+  .logo-mini {
+    background-image: url(/images/leo-health-heart@2x.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 43px auto;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    @include transition(opacity $transition-length);
   }
 
   a {
@@ -208,15 +227,12 @@
       background-color: rgba(255, 255, 255, 0.9);
     }
 
-    .site-title {
-      background-image: url(/images/leo-health-heart.png);
-      width: 43px;
+    .logo-mini {
+      opacity: 1;
+    }
 
-      @media
-      (-webkit-min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi) {
-        background-image: url(/images/leo-health-heart@2x.png);
-      }
+    .logo {
+      opacity: 0;
     }
   }
 }

@@ -54,5 +54,5 @@ $(function() {
 
   $teamImages.on('leo.verticallyenter', verticallyCenter);
   $(window).on('load', function(event) { $teamImages.trigger('leo.verticallyenter'); });
-  $('.join-leo p, .join-leo li').widowFix();
+  $('.join-leo .primary-content p, .join-leo .primary-content li').widowFix();
 });

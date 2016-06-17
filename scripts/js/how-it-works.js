@@ -43,11 +43,16 @@ $(function() {
     $list.find('a').removeClass(ACTIVE_CLASS);
     $list.find('> li').removeClass(ACTIVE_CLASS);
     $nextItem.addClass(ACTIVE_CLASS).find('a').addClass(ACTIVE_CLASS);
+
+    // remove height descrepancy for tech section
+    if($list.closest('.section-tech').length) {
+      $list.height($nextItem.height());
+    }
   }
 
   function toggleTab(event) {
     if($window.width() <= MOBILE_THRESHOLD) {
-      toggleTabMobile(event)
+      toggleTabMobile(event);
     } else {
       toggleTabDesktop(event);
     }
@@ -64,6 +69,9 @@ $(function() {
         var $list = $(this);
         $list.append($list.find(MOVED_SELECTOR).removeClass(MOVED_CLASS));
       });
+
+      // remove height descrepancy fix
+      $techContentList.parent().closest('ul').css('height', '');
 
       $techContentList.each(function() {
         var $list = $(this);
