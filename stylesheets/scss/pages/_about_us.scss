@@ -50,11 +50,16 @@
       @extend .clearfix;
     }
 
+    a {
+      border-bottom: none;
+    }
+
     li {
       float: left;
       text-align: center;
       width: 33%;
-      height: 214px;
+      text-align: center;
+      height: 215px;
 
       &:before {
         content: "";
@@ -66,6 +71,7 @@
 
     img {
       vertical-align: middle;
+      width: 50%;
     }
   }
 }

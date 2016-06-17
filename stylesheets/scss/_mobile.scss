@@ -38,6 +38,7 @@
     }
 
     .site-title {
+      width: 44px;
 
       .logo {
         opacity: 0;
@@ -152,6 +153,10 @@
 
     .joined-input {
       display: inline-block;
+    }
+
+    label[for] {
+      padding-left: 0;
     }
 
     .footer-nav,
@@ -809,6 +814,11 @@
         height: 100%;
       }
 
+      h2 {
+        // 3x normal margin-top
+        margin-top: 48px;
+      }
+
       .full-background {
         background-position: right center;
         background-size: auto 100%;
@@ -839,7 +849,7 @@
       }
 
       .full-background {
-        background-position-x: 25%;
+        background-position-x: left;
         height: 50%;
 
         &:after {
