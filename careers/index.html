@@ -39,7 +39,7 @@
                         <div class="category-delim">{{ tag.value }}</div>
                       {% endif %}
                       <article class="post-career">
-                        <h2>{{ post.title }}</h2>
+                        <h2><a class="career-deep-link" href="#{{ post.title | downcase | replace:' ','-' }}" name="{{ post.title | downcase | replace:' ','-' }}">{{ post.title }}</a></h2>
                         <div class="post-body">
                         {{ post.body }}
                         </div>

@@ -86,8 +86,13 @@
         left: 0;
       }
 
-      &:hover {
+      &:hover,
+      a:hover {
         color: $blue;
+      }
+
+      a:focus {
+        color: $font-color;
       }
     }
   }

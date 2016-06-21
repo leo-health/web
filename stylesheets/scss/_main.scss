@@ -388,6 +388,11 @@ input {
     &:hover {
       color: darken($blue, 20%);
     }
+
+    &:focus {
+      outline: none;
+      color: darken($blue, 20%);
+    }
   }
 
     .half-background {
@@ -476,10 +481,10 @@ input {
     position: absolute;
     content: " ";
     display: inline-block;
-    width: 7px;
+    width: 5px;
     background-color: $green;
-    height: 14px;
-    margin-top: 5px;
+    height: 0.8em;
+    margin-top: 0.45em;
     top: 0;
     left: 0;
     @include transition(top $transition-length);
