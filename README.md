@@ -17,6 +17,7 @@ This is the source code for leohealth.com, which is backed by [Siteleaf **v1**](
 
 Make sure you have [Ruby 2.3.1](https://www.ruby-lang.org/en/downloads/) installed or take a look at the Gemfile to change the version to your taste.
 
+* First do, ```siteleaf config leohealth.com```
 * Add your ```:site_id``` to ```config.ru```. You can find it in part of the management interface URL: manage.siteleaf.com/sites/**:site_id**/pages
 * ```bundle install```
 * ```siteleaf auth```
