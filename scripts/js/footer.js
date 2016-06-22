@@ -24,4 +24,5 @@ $(function() {
     $messageLabel.attr('style', '');
     $emailInput.focus();
   });
+
 });

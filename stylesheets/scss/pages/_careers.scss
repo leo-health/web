@@ -72,7 +72,6 @@
     h2 {
       font-size: $font-size-header-smaller;
       cursor: pointer;
-      @include transition(color $transition-length);
       position: relative;
       padding-left: 25px;
 
@@ -80,19 +79,23 @@
         content: "+";
         display: inline-block;
         width: 20px;
+        @include transition(color $transition-length);
         font-size: $font-size-middle;
         position: absolute;
         top: 0;
         left: 0;
       }
 
-      &:hover,
-      a:hover {
+      &:hover:before {
         color: $blue;
       }
 
+      a:hover {
+        color: $blue !important;
+      }
+
       a:focus {
-        color: $font-color;
+        color: inherit;
       }
     }
   }

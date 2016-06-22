@@ -126,6 +126,14 @@
   }
 }
 
+.with-accent-line.short.dark-gray {
+  @extend .with-accent-line.short;
+
+  &:after {
+    border-bottom-color: $font-color;
+  }
+}
+
 .with-accent-line.short.blue {
   @extend .with-accent-line.short;
 
@@ -197,7 +205,6 @@ body {
 
 main {
   max-width: 1600px;
-  min-height: 100vh;
   margin: 0 auto;
   background-color: white;
 }
@@ -247,6 +254,8 @@ input {
 }
 
 .primary-content {
+  min-height: calc(100vh - 255px);
+
   section {
     border-bottom: 1px solid $gray;
     position: relative;
@@ -356,14 +365,14 @@ input {
 
       .content-column-inner:hover {
         top: -10px;
-        @extend .with-accent-line.short.blue;
+        @extend .with-accent-line.short.dark-gray;
 
         > p:first-child {
-          border-color: $blue;
+          border-color: $font-color;
         }
 
         h2 {
-          color: $blue;
+          color: $font-color;
         }
       }
 
