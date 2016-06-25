@@ -3,7 +3,6 @@ $(function() {
   var TRACK_ATTR = 'data-fbq';
   var TRACK_ATTR_SELECTOR = '[data-fbq]';
   var TRACK_DATA_ATTR = TRACK_ATTR + '-data';
-
   function track(event) {
     var $target = $(this);
     var trackEvent = $target.attr(TRACK_ATTR);
