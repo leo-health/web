@@ -8,9 +8,8 @@ $(function() {
       goog_report_conversion ('https://provider.leohealth.com/registration')
     }else if(trackEvent === "homepage_enroll"){
       goog_report_conversion ('https://provider.leohealth.com/join-leo')
-    }else{
-      return
     }
+    return
   }
 
   $(document).on('click', TRACK_ATTR_SELECTOR, trackClick);
