@@ -59,6 +59,34 @@
 <body class="{% if current.home? %}home {% endif %}{{ current.url | replace:'/',' ' | remove_first:' ' }}">
   {{ content }}
   <div class="site-overlay"></div>
+
+  <!-- Google Code for Website - Enroll Now Conversion Page In your html page, add the snippet and call goog_report_conversion when someone clicks on the chosen link or button. -->
+  <script type="text/javascript">
+    / <![CDATA[ /
+    goog_snippet_vars = function() {
+      var w = window;
+      w.google_conversion_id = 919140497;
+      w.google_remarketing_only = false;
+    }
+    // DO NOT CHANGE THE CODE BELOW.
+    goog_report_conversion = function(url) {
+      goog_snippet_vars();
+      window.google_conversion_format = "3";
+      var opt = new Object();
+      opt.onload_callback = function() {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      }
+      var conv_handler = window['google_trackConversion'];
+      if (typeof(conv_handler) == 'function') {
+        conv_handler(opt);
+      }
+    }
+    / ]]> /
+  </script>
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js">
+  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="/scripts/js/min/jquery-2.2.0.js"><\/script>'); </script>
   <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
