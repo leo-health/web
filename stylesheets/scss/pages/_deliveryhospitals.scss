@@ -1,5 +1,13 @@
 .deliveryhospitals {
-  #section-2 .content-column-inner {
-    max-width: none;
+  #section-2 {
+    .content-column-inner {
+      max-width: none;
+    }
+
+    img {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
   }
 }
