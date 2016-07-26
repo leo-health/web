@@ -21,7 +21,7 @@
 <meta property="og:url" content="{{permalink | escape}}">
 <meta property="og:description" content="{{excerpt | fallback:site.meta.description | strip_html | escape}}">
 {% if current.meta.fb_share_image %}
-<meta property="og:image" content="{{permalink}}{{ current.meta.fb_share_image | escape}}">
+<meta property="og:image" content="http://www.leohealth.com{{ current.meta.fb_share_image | escape}}">
 {% else %}
 <meta property="og:image" content="{{permalink}}images/facebook-share-orange.jpg">
 {% endif %}
