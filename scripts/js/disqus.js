@@ -4,7 +4,7 @@
   };
 
   (function() { // DON'T EDIT BELOW THIS LINE
-  if (window.location.pathname === '/ask-an-expert'){
+  if (window.location.pathname.includes('ask-an-expert')){
     var a = document.createElement('div');
     a.id = 'disqus_thread';
     var b = document.getElementsByClassName('container-inner')[1];
