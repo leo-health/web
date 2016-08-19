@@ -1,5 +1,25 @@
 .ask-an-expert {
-  .primary-content section .content-column-inner{
-    max-width: none;
+  .content-column-inner{
+      h2{ padding-bottom: 5% !important }
+      h2:after {
+        content: none !important;
+      }
+      max-width: none !important;
+      img{
+        height: 100px;
+        border-radius: 80%;
+      }
+      p{
+        vertical-align: text-top;
+        display: inline-block;
+      }
+      #intro{
+        padding-left: 3%;
+        width: 83%;
+      }
+  }
+
+  #disqus_thread{
+    padding-top: 5%;
   }
 }
