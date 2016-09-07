@@ -1,10 +1,14 @@
 .ask-an-expert {
   .full-background{
-    height: 50%;
+    height: 400px!important;
   }
 
-  .primary-content .vertical-center{
-    padding-top: 15%!important;
+  .vertical-center{
+    height: 0px!important;
+  }
+
+  .primary-content section:first-child .vertical-center {
+    padding-top: 100px!important;
   }
 
   .content-column-inner{
@@ -33,10 +37,22 @@
   }
 
   #disqus_thread{
-    padding-top: 15%;
+    padding-bottom: 25%;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   @media (max-width: 960px) {
+    #disqus_thread{
+      padding-top:10%;
+      padding-bottom: 25%;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .full-background{
+      height:500px!important;
+    }
     .primary-content .vertical-center{
       padding-top: 20%!important;
     }

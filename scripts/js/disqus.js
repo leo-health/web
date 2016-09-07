@@ -7,7 +7,7 @@
   if (window.location.pathname.includes('ask-an-expert')){
     var a = document.createElement('div');
     a.id = 'disqus_thread';
-    var b = document.getElementsByClassName('content-column')[0];
+    var b = document.getElementsByClassName('primary-content')[0];
     b.appendChild(a);
   }
   var d = document, s = d.createElement('script');
