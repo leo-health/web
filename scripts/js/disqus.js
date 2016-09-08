@@ -1,7 +1,7 @@
 var disqus_config = function () {
   if (window.location.pathname.includes('ask-an-expert') &&  window.location.pathname.length > "/ask-an-expert".length){
     this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = window.location.pathname.split('/ask-an-expert/')[1]; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    this.page.identifier = window.location.pathname.split('/ask-an-expert/')[1].replace(/\/$/, ""); // Replace PAGE_IDENTIFIER with your page's unique identifier variable
   }
 };
 
@@ -14,7 +14,7 @@ var disqus_config = function () {
     b.appendChild(a);
 
     var d = document, s = d.createElement('script');
-    s.src = '//'+window.location.pathname.split('/ask-an-expert/')[1]+'.disqus.com/embed.js';
+    s.src = '//'+window.location.pathname.split('/ask-an-expert/')[1].replace(/\/$/, "")+'.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
   }
