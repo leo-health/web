@@ -95,6 +95,15 @@ chosen link or button. -->
   <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
   <script src="/scripts/js/min/application.js"></script>
   <script src="https://calendly.com/assets/external/widget.js" type="text/javascript"></script>
+
+  {% if current.meta.has_instructions %}
+  <script>
+    $(function() {
+      showInstructions({{current.meta.expert_first_name}}, {{current.meta.live_date}}, {{current.meta.live_date_string}}, {{current.meta.live_time_string}}, {{current.meta.expert_pronoun}});
+    });
+  </script>
+  {% endif %}
+
   {% if current.meta.has_optinmonster %}
   <!-- This site is converting visitors into subscribers and customers with OptinMonster - http://optinmonster.com --><script>var om57924e0a25a2e,om57924e0a25a2e_poll=function(){var r=0;return function(n,l){clearInterval(r),r=setInterval(n,l)}}();!function(e,t,n){if(e.getElementById(n)){om57924e0a25a2e_poll(function(){if(window['om_loaded']){if(!om57924e0a25a2e){om57924e0a25a2e=new OptinMonsterApp();return om57924e0a25a2e.init({"s":"21198.57924e0a25a2e","staging":0,"dev":0,"beta":0});}}},25);return;}var d=false,o=e.createElement(t);o.id=n,o.src="//a.optnmnstr.com/app/js/api.min.js",o.onload=o.onreadystatechange=function(){if(!d){if(!this.readyState||this.readyState==="loaded"||this.readyState==="complete"){try{d=om_loaded=true;om57924e0a25a2e=new OptinMonsterApp();om57924e0a25a2e.init({"s":"21198.57924e0a25a2e","staging":0,"dev":0,"beta":0});o.onload=o.onreadystatechange=null;}catch(t){}}}};(document.getElementsByTagName("head")[0]||document.documentElement).appendChild(o)}(document,"script","omapi-script");</script><!-- / OptinMonster -->
   {% endif %}
