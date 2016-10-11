@@ -15,7 +15,7 @@ var disqus_config = function () {
 
     var d = document, s = d.createElement('script');
 
-    var l = "Leo Live sessions are not affiliated with any specific medical practice nor does it reflect the views of individual pediatricians."
+    var l = "Leo Live sessions are not affiliated with any specific medical practice nor do they reflect the views of individual pediatricians."
     var p = d.createElement('p');
     p.appendChild(d.createTextNode(l));
 
