@@ -3,5 +3,5 @@ var showInstructions = function(expert_first_name, live_date, live_date_string, 
 	var today = new Date();
 	var dateString = (live.setHours(0,0,0,0) == today.setHours(0,0,0,0) ? 'today' : ('on ' +live_date_string));
 	$("#instructions").html(expert_first_name +' will be answering questions from ' +
-		live_time_string + ' ' + dateString +'. Send your questions to '+expert_pronoun+' using the text box below and tune in for the real-time discussion. All questions and answers will be public on this page.');
+		live_time_string + ' ' + dateString +'. Send your questions to '+expert_pronoun+' using the text box below and tune in for the real-time discussion. All questions and answers are public.');
 };
