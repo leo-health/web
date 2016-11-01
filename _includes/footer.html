@@ -9,6 +9,11 @@
         </li>
         {% endif %}
         {% endfor %}
+
+      </ul>
+      <ul class="social-links list-inline">
+        <!-- <li><a href="https://itunes.apple.com/us/app/leo-health/id1051397244?mt=8">Leo for iPhone</a></li> -->
+        <li><a href="https://itunes.apple.com/us/app/leo-health/id1051397244?mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:135px;height:40px;"></a></li>
       </ul>
       <ul class="social-links list-inline">
         {% for data in site.meta %}
@@ -22,6 +27,7 @@
             {% endif %}
         {% endfor %}
       </ul>
+
       <form id="email-signup-form" method="post" action="//leohealth.us9.list-manage.com/subscribe/post?u=5962dc8f066e37a3a7142b419&amp;id=fd9c78c220" novalidate>
         <div class="joined-input">
           <input id="email-input" type="email" placeholder="{{ site.meta['mailchimp_placeholder'] }}">
@@ -29,6 +35,7 @@
           <label for="email-input"></label>
         </div>
       </form>
+
     </div>
     <div class="footer-info">
       <span class="copyright">©{{ 'now' | date: "%Y" }} {{ site.meta.copyright }}</span>
